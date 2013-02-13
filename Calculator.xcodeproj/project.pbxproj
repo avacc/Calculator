@@ -7,17 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA1053F216CC30FE0059262D /* Stack.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1053F116CC30FE0059262D /* Stack.m */; };
+		FA1053F516CC3E340059262D /* Calculator.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1053F416CC3E340059262D /* Calculator.m */; };
+		FA33C8A316CB1639000FAEFA /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA33C89916CB1639000FAEFA /* MainStoryboard.storyboard */; };
+		FA9DAE3B16CB262F007415F3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA9DAE3A16CB262F007415F3 /* InfoPlist.strings */; };
+		FABEA7DC16CB18F3001938BA /* AGVAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FABEA7D916CB18F3001938BA /* AGVAppDelegate.m */; };
+		FABEA7E316CB1930001938BA /* AGVViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FABEA7E116CB1930001938BA /* AGVViewController.m */; };
 		FADDEECD16AF53DA0036357D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FADDEECC16AF53DA0036357D /* UIKit.framework */; };
 		FADDEECF16AF53DA0036357D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FADDEECE16AF53DA0036357D /* Foundation.framework */; };
 		FADDEED116AF53DA0036357D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FADDEED016AF53DA0036357D /* CoreGraphics.framework */; };
-		FADDEED716AF53DA0036357D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FADDEED516AF53DA0036357D /* InfoPlist.strings */; };
 		FADDEED916AF53DA0036357D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FADDEED816AF53DA0036357D /* main.m */; };
-		FADDEEDD16AF53DA0036357D /* AGVAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FADDEEDC16AF53DA0036357D /* AGVAppDelegate.m */; };
 		FADDEEDF16AF53DA0036357D /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = FADDEEDE16AF53DA0036357D /* Default.png */; };
 		FADDEEE116AF53DA0036357D /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FADDEEE016AF53DA0036357D /* Default@2x.png */; };
 		FADDEEE316AF53DA0036357D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FADDEEE216AF53DA0036357D /* Default-568h@2x.png */; };
-		FADDEEE616AF53DA0036357D /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FADDEEE416AF53DA0036357D /* MainStoryboard.storyboard */; };
-		FADDEEE916AF53DA0036357D /* AGVViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FADDEEE816AF53DA0036357D /* AGVViewController.m */; };
 		FADDEEF116AF53DA0036357D /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FADDEEF016AF53DA0036357D /* SenTestingKit.framework */; };
 		FADDEEF216AF53DA0036357D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FADDEECC16AF53DA0036357D /* UIKit.framework */; };
 		FADDEEF316AF53DA0036357D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FADDEECE16AF53DA0036357D /* Foundation.framework */; };
@@ -36,25 +38,29 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FA1053F016CC30FE0059262D /* Stack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stack.h; sourceTree = "<group>"; };
+		FA1053F116CC30FE0059262D /* Stack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Stack.m; sourceTree = "<group>"; };
+		FA1053F316CC3E340059262D /* Calculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Calculator.h; sourceTree = "<group>"; };
+		FA1053F416CC3E340059262D /* Calculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Calculator.m; sourceTree = "<group>"; };
+		FA33C88E16CB1639000FAEFA /* AGVAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGVAppDelegate.h; sourceTree = "<group>"; };
+		FA33C89A16CB1639000FAEFA /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		FA9DAE3A16CB262F007415F3 /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
+		FABEA7D916CB18F3001938BA /* AGVAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGVAppDelegate.m; sourceTree = "<group>"; };
+		FABEA7E016CB1930001938BA /* AGVViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGVViewController.h; sourceTree = "<group>"; };
+		FABEA7E116CB1930001938BA /* AGVViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGVViewController.m; sourceTree = "<group>"; };
 		FADDEEC816AF53DA0036357D /* Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FADDEECC16AF53DA0036357D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		FADDEECE16AF53DA0036357D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FADDEED016AF53DA0036357D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		FADDEED416AF53DA0036357D /* Calculator-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Calculator-Info.plist"; sourceTree = "<group>"; };
-		FADDEED616AF53DA0036357D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FADDEED416AF53DA0036357D /* Calculator-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Calculator-Info.plist"; path = "en.lproj/Calculator-Info.plist"; sourceTree = "<group>"; };
 		FADDEED816AF53DA0036357D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FADDEEDA16AF53DA0036357D /* Calculator-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Calculator-Prefix.pch"; sourceTree = "<group>"; };
-		FADDEEDB16AF53DA0036357D /* AGVAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AGVAppDelegate.h; sourceTree = "<group>"; };
-		FADDEEDC16AF53DA0036357D /* AGVAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AGVAppDelegate.m; sourceTree = "<group>"; };
 		FADDEEDE16AF53DA0036357D /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		FADDEEE016AF53DA0036357D /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		FADDEEE216AF53DA0036357D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		FADDEEE516AF53DA0036357D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		FADDEEE716AF53DA0036357D /* AGVViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AGVViewController.h; sourceTree = "<group>"; };
-		FADDEEE816AF53DA0036357D /* AGVViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AGVViewController.m; sourceTree = "<group>"; };
 		FADDEEEF16AF53DA0036357D /* CalculatorTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CalculatorTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FADDEEF016AF53DA0036357D /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		FADDEEF816AF53DA0036357D /* CalculatorTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CalculatorTests-Info.plist"; sourceTree = "<group>"; };
+		FADDEEF816AF53DA0036357D /* CalculatorTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "CalculatorTests-Info.plist"; path = "CalculatorTests/CalculatorTests-Info.plist"; sourceTree = SOURCE_ROOT; };
 		FADDEEFA16AF53DA0036357D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		FADDEEFC16AF53DA0036357D /* CalculatorTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CalculatorTests.h; sourceTree = "<group>"; };
 		FADDEEFD16AF53DA0036357D /* CalculatorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CalculatorTests.m; sourceTree = "<group>"; };
@@ -117,11 +123,15 @@
 		FADDEED216AF53DA0036357D /* Calculator */ = {
 			isa = PBXGroup;
 			children = (
-				FADDEEDB16AF53DA0036357D /* AGVAppDelegate.h */,
-				FADDEEDC16AF53DA0036357D /* AGVAppDelegate.m */,
-				FADDEEE416AF53DA0036357D /* MainStoryboard.storyboard */,
-				FADDEEE716AF53DA0036357D /* AGVViewController.h */,
-				FADDEEE816AF53DA0036357D /* AGVViewController.m */,
+				FA1053F316CC3E340059262D /* Calculator.h */,
+				FA1053F416CC3E340059262D /* Calculator.m */,
+				FA1053F016CC30FE0059262D /* Stack.h */,
+				FA1053F116CC30FE0059262D /* Stack.m */,
+				FABEA7E016CB1930001938BA /* AGVViewController.h */,
+				FABEA7E116CB1930001938BA /* AGVViewController.m */,
+				FA33C88E16CB1639000FAEFA /* AGVAppDelegate.h */,
+				FABEA7D916CB18F3001938BA /* AGVAppDelegate.m */,
+				FA33C89916CB1639000FAEFA /* MainStoryboard.storyboard */,
 				FADDEED316AF53DA0036357D /* Supporting Files */,
 			);
 			path = Calculator;
@@ -131,7 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				FADDEED416AF53DA0036357D /* Calculator-Info.plist */,
-				FADDEED516AF53DA0036357D /* InfoPlist.strings */,
+				FA9DAE3A16CB262F007415F3 /* InfoPlist.strings */,
 				FADDEED816AF53DA0036357D /* main.m */,
 				FADDEEDA16AF53DA0036357D /* Calculator-Prefix.pch */,
 				FADDEEDE16AF53DA0036357D /* Default.png */,
@@ -154,8 +164,8 @@
 		FADDEEF716AF53DA0036357D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				FADDEEF816AF53DA0036357D /* CalculatorTests-Info.plist */,
 				FADDEEF916AF53DA0036357D /* InfoPlist.strings */,
+				FADDEEF816AF53DA0036357D /* CalculatorTests-Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -232,11 +242,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FADDEED716AF53DA0036357D /* InfoPlist.strings in Resources */,
 				FADDEEDF16AF53DA0036357D /* Default.png in Resources */,
 				FADDEEE116AF53DA0036357D /* Default@2x.png in Resources */,
 				FADDEEE316AF53DA0036357D /* Default-568h@2x.png in Resources */,
-				FADDEEE616AF53DA0036357D /* MainStoryboard.storyboard in Resources */,
+				FA33C8A316CB1639000FAEFA /* MainStoryboard.storyboard in Resources */,
+				FA9DAE3B16CB262F007415F3 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,8 +282,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				FADDEED916AF53DA0036357D /* main.m in Sources */,
-				FADDEEDD16AF53DA0036357D /* AGVAppDelegate.m in Sources */,
-				FADDEEE916AF53DA0036357D /* AGVViewController.m in Sources */,
+				FA1053F216CC30FE0059262D /* Stack.m in Sources */,
+				FA1053F516CC3E340059262D /* Calculator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +292,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				FADDEEFE16AF53DA0036357D /* CalculatorTests.m in Sources */,
+				FABEA7DC16CB18F3001938BA /* AGVAppDelegate.m in Sources */,
+				FABEA7E316CB1930001938BA /* AGVViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,18 +308,10 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		FADDEED516AF53DA0036357D /* InfoPlist.strings */ = {
+		FA33C89916CB1639000FAEFA /* MainStoryboard.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				FADDEED616AF53DA0036357D /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		FADDEEE416AF53DA0036357D /* MainStoryboard.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FADDEEE516AF53DA0036357D /* en */,
+				FA33C89A16CB1639000FAEFA /* en */,
 			);
 			name = MainStoryboard.storyboard;
 			sourceTree = "<group>";
@@ -448,6 +452,7 @@
 				FADDEF0316AF53DA0036357D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FADDEF0416AF53DA0036357D /* Build configuration list for PBXNativeTarget "CalculatorTests" */ = {
 			isa = XCConfigurationList;
@@ -456,6 +461,7 @@
 				FADDEF0616AF53DA0036357D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

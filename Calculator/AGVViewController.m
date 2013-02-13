@@ -26,4 +26,18 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)numberPress:(id)sender
+{
+    
+}
+
+- (void)operationPress:(id)sender
+{
+    
+}
+
+- (void)solvePress:(id)sender
+{
+    
+}
 @end

@@ -7,7 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Calculator.h"
 
 @interface AGVViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UILabel* title;
+@property (weak, nonatomic) IBOutlet UITextField* calc;
+@property (weak, nonatomic) IBOutlet UIScrollView* old;
+@property (weak, nonatomic) IBOutlet UIScrollView* oper;
+
+- (IBAction)numberPress:(id)sender;
+- (IBAction)operationPress:(id)sender;
+- (IBAction)solvePress:(id)sender;
 
 @end
