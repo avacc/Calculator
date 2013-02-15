@@ -8,10 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "Calculator.h"
+#import "Stack.h"
 
 @interface AGVViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UILabel* title;
-@property (weak, nonatomic) IBOutlet UITextField* calc;
 @property (weak, nonatomic) IBOutlet UIScrollView* old;
 @property (weak, nonatomic) IBOutlet UIScrollView* oper;
 

@@ -9,7 +9,12 @@
 #import "Calculator.h"
 
 @implementation Calculator
-    
+
+NSString* add = @"+";
+NSString* sub = @"-";
+NSString* mul = @"x";
+NSString* d = @"/";
+
 - (Calculator*) initCalculator {
     self = [super init];
     if(self){
@@ -19,18 +24,43 @@
     return self;
 }
 
-- (id) calculate {
+- (NSString*) calculate {
     if(![self ableToCalculate]){
         return nil;
     }
     
+    NSDecimalNumber* result = 0;
+    NSDecimalNumber* x;
+    NSDecimalNumber* y;
+    
+    NSString* oper;
+    while([self.operatorStack size] > 0){
+        x = (NSDecimalNumber*) [self.numberStack pop];
+        y = (NSDecimalNumber*) [self.numberStack pop];
+        oper = (NSString*) [self.operatorStack pop];
+        
+        if([oper isEqualToString: add]){
+            result = [x decimalNumberByAdding: y];
+        }else if ([oper isEqualToString: sub]){
+            result = [x decimalNumberBySubtracting: y];
+        }else if ([oper isEqualToString:mul]){
+            result = [x decimalNumberByMultiplyingBy: y];
+        }else{
+            result = [x decimalNumberByDividingBy: y];
+        }
+        [self.numberStack push: result];
+    }
+    result = (NSDecimalNumber*)[self.numberStack pop];
+    return result.stringValue;
 }
 
-- (void) pushNumber: (id) num {
+
+
+- (void) pushNumber: (NSString*) num {
     [self.numberStack push: num];
 }
 
-- (void) pushOperator: (id) oper {
+- (void) pushOperator: (NSString*) oper {
     [self.operatorStack push: oper];
 }
 

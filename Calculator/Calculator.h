@@ -10,8 +10,9 @@
 #import "Stack.h"
 
 @interface Calculator : NSObject
-@property (weak, nonatomic) Stack* numberStack;
-@property (weak, nonatomic) Stack* operatorStack;
+@property (strong, nonatomic) Stack* numberStack;
+@property (strong, nonatomic) Stack* operatorStack;
+
 
 - (Calculator*) initCalculator;
 - (id) calculate;
