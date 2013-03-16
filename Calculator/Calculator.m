@@ -24,7 +24,7 @@ NSString* d = @"/";
     return self;
 }
 
-- (NSString*) calculate {
+- (NSString*) calculate: (NSString*) expression {
     if(![self ableToCalculate]){
         return nil;
     }

@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface Stack : NSObject
-@p/Users/Alex/Documents/Calculator/Calculator/Stack.mroperty (strong, nonatomic) NSMutableArray* stac;
+@property (strong, nonatomic) NSMutableArray* stac;
 
 - (Stack*) initStack;
 - (BOOL) isEmpty;

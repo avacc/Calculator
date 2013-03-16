@@ -13,7 +13,7 @@
 - (Stack*) initStack {
     self = [super init];
     if (self){
-        self.stac = [[NSMutableArray alloc] initWithCapacity: 100];
+        self.stac = [[NSMutableArray alloc] init];
     }
     return self;
 }

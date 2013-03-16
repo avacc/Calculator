@@ -25,6 +25,9 @@
 		FADDEEF316AF53DA0036357D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FADDEECE16AF53DA0036357D /* Foundation.framework */; };
 		FADDEEFB16AF53DA0036357D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FADDEEF916AF53DA0036357D /* InfoPlist.strings */; };
 		FADDEEFE16AF53DA0036357D /* CalculatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FADDEEFD16AF53DA0036357D /* CalculatorTests.m */; };
+		FAE75AB716F40E4E00EBD4C9 /* AGVViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FABEA7E116CB1930001938BA /* AGVViewController.m */; };
+		FAE75AB816F40E5400EBD4C9 /* AGVAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FABEA7D916CB18F3001938BA /* AGVAppDelegate.m */; };
+		FAFE064B16F3D234009ACBF9 /* ExpressionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FAFE064A16F3D233009ACBF9 /* ExpressionCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +67,8 @@
 		FADDEEFA16AF53DA0036357D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		FADDEEFC16AF53DA0036357D /* CalculatorTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CalculatorTests.h; sourceTree = "<group>"; };
 		FADDEEFD16AF53DA0036357D /* CalculatorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CalculatorTests.m; sourceTree = "<group>"; };
+		FAFE064916F3D233009ACBF9 /* ExpressionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpressionCell.h; sourceTree = "<group>"; };
+		FAFE064A16F3D233009ACBF9 /* ExpressionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpressionCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +128,8 @@
 		FADDEED216AF53DA0036357D /* Calculator */ = {
 			isa = PBXGroup;
 			children = (
+				FAFE064916F3D233009ACBF9 /* ExpressionCell.h */,
+				FAFE064A16F3D233009ACBF9 /* ExpressionCell.m */,
 				FA1053F316CC3E340059262D /* Calculator.h */,
 				FA1053F416CC3E340059262D /* Calculator.m */,
 				FA1053F016CC30FE0059262D /* Stack.h */,
@@ -140,9 +147,9 @@
 		FADDEED316AF53DA0036357D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				FADDEED416AF53DA0036357D /* Calculator-Info.plist */,
 				FA9DAE3A16CB262F007415F3 /* InfoPlist.strings */,
 				FADDEED816AF53DA0036357D /* main.m */,
+				FADDEED416AF53DA0036357D /* Calculator-Info.plist */,
 				FADDEEDA16AF53DA0036357D /* Calculator-Prefix.pch */,
 				FADDEEDE16AF53DA0036357D /* Default.png */,
 				FADDEEE016AF53DA0036357D /* Default@2x.png */,
@@ -281,9 +288,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAE75AB816F40E5400EBD4C9 /* AGVAppDelegate.m in Sources */,
+				FAE75AB716F40E4E00EBD4C9 /* AGVViewController.m in Sources */,
 				FADDEED916AF53DA0036357D /* main.m in Sources */,
 				FA1053F216CC30FE0059262D /* Stack.m in Sources */,
 				FA1053F516CC3E340059262D /* Calculator.m in Sources */,
+				FAFE064B16F3D234009ACBF9 /* ExpressionCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
