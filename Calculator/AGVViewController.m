@@ -88,12 +88,6 @@ BOOL hasOperator = NO;
         
         ExpressionCell* cell = (ExpressionCell*)[self.solvedExpressions cellForRowAtIndexPath:indexPath];
         NSLog(@"%@", cell);
-        /*
-        cell.oldExpression = [[UITextField alloc] init];
-        NSLog(@"cell.oldExpression: %@", cell.oldExpression);
-        */
-        /*[cell.oldExpression setContentSize: CGSizeMake(self.view.frame.size.width, cell.oldExpression.frame.size.height)];*/
-        cell.oldExpression.contentInset = UIEdgeInsetsMake(-8, -8, -8, -8);
         cell.oldExpression.text = [self.oldExpressions objectAtIndex: [self.oldExpressions count]-1];
         NSLog(@"completeExpression: %@ cell.oldExpression.text: %@", [self.oldExpressions objectAtIndex: indexPath.row], cell.oldExpression.text);
         
