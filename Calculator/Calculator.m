@@ -36,83 +36,89 @@ NSArray* operators;
     NSDecimalNumber* second = [[NSDecimalNumber alloc] init];
     NSDecimalNumber* first = [[NSDecimalNumber alloc] init];
     NSDecimalNumber* result = [[NSDecimalNumber alloc] init];
-    for(NSString* token in tokens){
-        NSLog(@"Number Stack size: %d", self.numberStack.stac.count);
-        if([operators containsObject: token]){
-            NSLog(@"Contains object");
-            if([self isHigherPriority: token]) {
-                [self.operatorStack push: token];
-                NSLog(@"Operator Stack Size: %d", self.operatorStack.stac.count);
-            }else{
-                NSLog(@"isHigherPriority: %@", ([self isHigherPriority: token]) ? @"YES" : @"NO");
-                NSString* operator = (NSString*) [self.operatorStack pop];
-                second = [NSDecimalNumber decimalNumberWithString: (NSString*)[self.numberStack pop]];
-                first = [NSDecimalNumber decimalNumberWithString: (NSString*)[self.numberStack pop]];
-                if([operator isEqualToString: ex]){
-                    result = [first decimalNumberByRaisingToPower: [second integerValue]];
-                }else if([operator isEqualToString: mul]){
-                    result = [first decimalNumberByMultiplyingBy: second];
-                }else if([operator isEqualToString: d]){
-                    result = [first decimalNumberByDividingBy: second];
-                }else if([operator isEqualToString: mod]){
-                    int x = [first intValue];
-                    int y = [second intValue];
-                    int* ans = x%y;
-                    result = (NSDecimalNumber*)[NSDecimalNumber numberWithInt: ans];
-                }else if([operator isEqualToString: add]){
-                    result = [first decimalNumberByAdding: second];
+    @try {
+        for(NSString* token in tokens){
+            NSLog(@"Number Stack size: %d", self.numberStack.stac.count);
+            if([operators containsObject: token]){
+                NSLog(@"Contains object");
+                if([self isHigherPriority: token]) {
+                    [self.operatorStack push: token];
+                    NSLog(@"Operator Stack Size: %d", self.operatorStack.stac.count);
                 }else{
-                    result = [first decimalNumberBySubtracting: second];
+                    NSLog(@"isHigherPriority: %@", ([self isHigherPriority: token]) ? @"YES" : @"NO");
+                    NSString* operator = (NSString*) [self.operatorStack pop];
+                    second = [NSDecimalNumber decimalNumberWithString: (NSString*)[self.numberStack pop]];
+                    first = [NSDecimalNumber decimalNumberWithString: (NSString*)[self.numberStack pop]];
+                    if([operator isEqualToString: ex]){
+                        result = [first decimalNumberByRaisingToPower: [second integerValue]];
+                    }else if([operator isEqualToString: mul]){
+                        result = [first decimalNumberByMultiplyingBy: second];
+                    }else if([operator isEqualToString: d]){
+                        result = [first decimalNumberByDividingBy: second];
+                    }else if([operator isEqualToString: mod]){
+                        int x = [first intValue];
+                        int y = [second intValue];
+                        int* ans = x%y;
+                        result = (NSDecimalNumber*)[NSDecimalNumber numberWithInt: ans];
+                    }else if([operator isEqualToString: add]){
+                        result = [first decimalNumberByAdding: second];
+                    }else{
+                        result = [first decimalNumberBySubtracting: second];
+                    }
+                    [self.numberStack push: result];
+                    [self.operatorStack push: token];
                 }
-                [self.numberStack push: result];
-                [self.operatorStack push: token];
+            }else{
+                [self.numberStack push: token];
             }
-        }else{
-            [self.numberStack push: token];
+        }
+        NSString* op;
+        NSDecimalNumber* x;
+        NSDecimalNumber* y;
+        NSDecimalNumber* solved;
+        while(![self.operatorStack isEmpty]){
+            NSLog(@"2nd Loop - numberStack size: %d", self.numberStack.stac.count);
+            NSLog(@"2nd Loop - operatorStack size: %d", self.operatorStack.stac.count);
+            op = (NSString*)[self.operatorStack pop];
+            NSLog(@"%@", op);
+            if([[self.numberStack peek] isKindOfClass: [NSString class]]){
+                y = [NSDecimalNumber decimalNumberWithString: (NSString*) [self.numberStack pop]];
+            }else{
+                y = [self.numberStack pop];
+            }
+            if([[self.numberStack peek] isKindOfClass: [NSString class]]){
+                x = [NSDecimalNumber decimalNumberWithString: (NSString*) [self.numberStack pop]];
+            }else{
+                x = [self.numberStack pop];
+            }
+            NSLog(@"x: %@", x);
+            NSLog(@"y: %@", y);
+            if([op isEqualToString: ex]){
+                solved = [x decimalNumberByRaisingToPower: [y integerValue]];
+            }else if([op isEqualToString: mul]){
+                solved = [x decimalNumberByMultiplyingBy: y];
+            }else if([op isEqualToString: d]){
+                solved = [x decimalNumberByDividingBy: y];
+            }else if([op isEqualToString: mod]){
+                int xx = [x intValue];
+                int yy = [y intValue];
+                int ans = xx%yy;
+                solved = (NSDecimalNumber*)[NSDecimalNumber numberWithInt: ans];
+            }else if([op isEqualToString: add]){
+                solved = [x decimalNumberByAdding: y];
+            }else{
+                solved = [x decimalNumberBySubtracting: y];
+            }
+            [self.numberStack push: solved];
+            NSDecimalNumber* z = (NSDecimalNumber*)[self.numberStack pop];
+            NSString* toBeReturned = [z stringValue];
+            return toBeReturned;
         }
     }
-    NSString* op;
-    NSDecimalNumber* x;
-    NSDecimalNumber* y;
-    NSDecimalNumber* solved;
-    while(![self.operatorStack isEmpty]){
-        NSLog(@"2nd Loop - numberStack size: %d", self.numberStack.stac.count);
-        NSLog(@"2nd Loop - operatorStack size: %d", self.operatorStack.stac.count);
-        op = (NSString*)[self.operatorStack pop];
-        NSLog(@"%@", op);
-        if([[self.numberStack peek] isKindOfClass: [NSString class]]){
-            y = [NSDecimalNumber decimalNumberWithString: (NSString*) [self.numberStack pop]];
-        }else{
-            y = [self.numberStack pop];
-        }
-        if([[self.numberStack peek] isKindOfClass: [NSString class]]){
-            x = [NSDecimalNumber decimalNumberWithString: (NSString*) [self.numberStack pop]];
-        }else{
-            x = [self.numberStack pop];
-        }
-        NSLog(@"x: %@", x);
-        NSLog(@"y: %@", y);
-        if([op isEqualToString: ex]){
-        solved = [x decimalNumberByRaisingToPower: [y integerValue]];
-        }else if([op isEqualToString: mul]){
-            solved = [x decimalNumberByMultiplyingBy: y];
-        }else if([op isEqualToString: d]){
-            solved = [x decimalNumberByDividingBy: y];
-        }else if([op isEqualToString: mod]){
-            int xx = [x intValue];
-            int yy = [y intValue];
-            int ans = xx%yy;
-            solved = (NSDecimalNumber*)[NSDecimalNumber numberWithInt: ans];
-        }else if([op isEqualToString: add]){
-            solved = [x decimalNumberByAdding: y];
-        }else{
-            solved = [x decimalNumberBySubtracting: y];
-        }
-        [self.numberStack push: solved];
+    @catch (NSException* exception) {
+        NSLog(@"Exception in calculate: %@", exception);
+        return @"Invalid Expression";
     }
-    NSDecimalNumber* z = (NSDecimalNumber*)[self.numberStack pop];
-    NSString* toBeReturned = [z stringValue];
-    return toBeReturned;
 }
                     
 - (BOOL) isHigherPriority: (NSString*) newOperator{

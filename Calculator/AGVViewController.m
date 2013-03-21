@@ -74,23 +74,27 @@ BOOL hasOperator = NO;
 }
 
 - (IBAction) solvePress: (id) sender {
-    if(([[self.expression.text substringFromIndex: [self.expression.text length]-1] isEqualToString: @" "] || !hasOperator) || ([[self.expression.text substringFromIndex: [self.expression.text length]-1] isEqualToString: @"-"] || [[self.expression.text substringFromIndex: [self.expression.text length]-1] isEqualToString: @"."])){
+    if([self.expression.text length] == 0){        
+    }else if(([[self.expression.text substringFromIndex: [self.expression.text length]-1] isEqualToString: @" "] || !hasOperator) || ([[self.expression.text substringFromIndex: [self.expression.text length]-1] isEqualToString: @"-"] || [[self.expression.text substringFromIndex: [self.expression.text length]-1] isEqualToString: @"."])){
     }else{
         NSString* answer = [self.calculator calculate: self.expression.text];
-        NSString* completeExpression = [self.expression.text stringByAppendingFormat: @" = %@", answer];
-        
-        NSIndexPath* indexPath = [NSIndexPath indexPathForRow: 0 inSection: 0];
-        [self.oldExpressions addObject: completeExpression];
-        NSLog(@"%d", self.oldExpressions.count);
-        
-        NSArray* array = [[NSArray alloc] initWithObjects: indexPath, nil];
-        [self.solvedExpressions insertRowsAtIndexPaths: array withRowAnimation: UITableViewRowAnimationAutomatic];
-        
-        ExpressionCell* cell = (ExpressionCell*)[self.solvedExpressions cellForRowAtIndexPath:indexPath];
-        NSLog(@"%@", cell);
-        cell.oldExpression.text = [self.oldExpressions objectAtIndex: [self.oldExpressions count]-1];
-        NSLog(@"completeExpression: %@ cell.oldExpression.text: %@", [self.oldExpressions objectAtIndex: indexPath.row], cell.oldExpression.text);
-        
+        if([answer isEqualToString: @"Invalid Expression"]){
+            NSLog(@"Invalid Expression");
+        }else{
+            NSString* completeExpression = [self.expression.text stringByAppendingFormat: @" = %@", answer];
+            
+            NSIndexPath* indexPath = [NSIndexPath indexPathForRow: 0 inSection: 0];
+            [self.oldExpressions addObject: completeExpression];
+            NSLog(@"%d", self.oldExpressions.count);
+            
+            NSArray* array = [[NSArray alloc] initWithObjects: indexPath, nil];
+            [self.solvedExpressions insertRowsAtIndexPaths: array withRowAnimation: UITableViewRowAnimationAutomatic];
+            
+            ExpressionCell* cell = (ExpressionCell*)[self.solvedExpressions cellForRowAtIndexPath:indexPath];
+            NSLog(@"%@", cell);
+            cell.oldExpression.text = [self.oldExpressions objectAtIndex: [self.oldExpressions count]-1];
+            NSLog(@"completeExpression: %@ cell.oldExpression.text: %@", [self.oldExpressions objectAtIndex: indexPath.row], cell.oldExpression.text);
+        }
         self.expression.text = @"";
         [self.solvedExpressions reloadData];
         hasDecimal = NO;
@@ -127,6 +131,13 @@ BOOL hasOperator = NO;
         [self.solvedExpressions deleteRowsAtIndexPaths: array withRowAnimation: UITableViewRowAnimationAutomatic];
         [self.solvedExpressions reloadData];
     }
+}
+
+- (IBAction) clearPress: (id) sender {
+    self.expression.text = @"";
+    hasDecimal = NO;
+    hasNegative = NO;
+    hasOperator = NO;
 }
 
 #pragma mark - UITableViewDataSource methods

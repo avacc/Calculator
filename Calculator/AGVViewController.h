@@ -22,4 +22,6 @@
 - (IBAction) operationPress: (id) sender;
 - (IBAction) solvePress: (id) sender;
 - (IBAction) backSpacePress: (id) sender;
+- (IBAction) clearExpressionsPress: (id) sender;
+- (IBAction) clearPress: (id) sender;
 @end

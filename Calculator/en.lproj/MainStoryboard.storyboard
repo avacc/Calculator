@@ -204,7 +204,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="kwu-oR-WTY">
-                                <rect key="frame" x="14" y="486" width="121" height="36"/>
+                                <rect key="frame" x="14" y="475" width="121" height="36"/>
                                 <fontDescription key="fontDescription" name="Symbol" family="Symbol" pointSize="17"/>
                                 <state key="normal" title="⌫">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -218,7 +218,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="yko-KE-vMm">
-                                <rect key="frame" x="14" y="426" width="121" height="34"/>
+                                <rect key="frame" x="14" y="425" width="121" height="34"/>
                                 <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="15"/>
                                 <state key="normal" title="Solve">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -330,7 +330,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="6Zs-YV-nEg">
-                                <rect key="frame" x="181" y="356" width="119" height="72"/>
+                                <rect key="frame" x="181" y="351" width="121" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="13"/>
                                 <state key="normal" title="Clear Expressions">
@@ -358,6 +358,20 @@
                                     <action selector="numberPress:" destination="2" eventType="touchUpInside" id="jJJ-gJ-Xwu"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="C1q-35-93H">
+                                <rect key="frame" x="181" y="475" width="121" height="36"/>
+                                <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="15"/>
+                                <state key="normal" title="C">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="clearPress:" destination="2" eventType="touchUpInside" id="zVC-aq-SZb"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.20000000298023224" green="0.20000000298023224" blue="0.20000000298023224" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -378,6 +392,7 @@
             <relationships>
                 <relationship kind="action" name="backSpacePress:"/>
                 <relationship kind="action" name="clearExpressionsPress:"/>
+                <relationship kind="action" name="clearPress:"/>
                 <relationship kind="action" name="numberPress:"/>
                 <relationship kind="action" name="operationPress:"/>
                 <relationship kind="action" name="solvePress:"/>
