@@ -110,10 +110,10 @@ NSArray* operators;
                 solved = [x decimalNumberBySubtracting: y];
             }
             [self.numberStack push: solved];
-            NSDecimalNumber* z = (NSDecimalNumber*)[self.numberStack pop];
-            NSString* toBeReturned = [z stringValue];
-            return toBeReturned;
         }
+        NSDecimalNumber* z = (NSDecimalNumber*)[self.numberStack pop];
+        NSString* toBeReturned = [z stringValue];
+        return toBeReturned;
     }
     @catch (NSException* exception) {
         NSLog(@"Exception in calculate: %@", exception);
