@@ -17,6 +17,7 @@
 
 BOOL hasDecimal = NO;
 BOOL hasNegative = NO;
+BOOL hasOperator = NO;
 
 - (id) init {
     self = [super init];
@@ -66,13 +67,14 @@ BOOL hasNegative = NO;
     } else {
         NSString* addition = [[NSString alloc] initWithFormat: @" %@ ", operator];
         self.expression.text = [self.expression.text stringByAppendingString: addition];
+        hasOperator = YES;
         hasDecimal = NO;
         hasNegative = NO;
     }
 }
 
 - (IBAction) solvePress: (id) sender {
-    if([[self.expression.text substringFromIndex: [self.expression.text length]-1] isEqualToString: @" "] || ([[self.expression.text substringFromIndex: [self.expression.text length]-1] isEqualToString: @"-"] || [[self.expression.text substringFromIndex: [self.expression.text length]-1] isEqualToString: @"."])){
+    if(([[self.expression.text substringFromIndex: [self.expression.text length]-1] isEqualToString: @" "] || !hasOperator) || ([[self.expression.text substringFromIndex: [self.expression.text length]-1] isEqualToString: @"-"] || [[self.expression.text substringFromIndex: [self.expression.text length]-1] isEqualToString: @"."])){
     }else{
         NSString* answer = [self.calculator calculate: self.expression.text];
         NSString* completeExpression = [self.expression.text stringByAppendingFormat: @" = %@", answer];
@@ -97,6 +99,9 @@ BOOL hasNegative = NO;
         
         self.expression.text = @"";
         [self.solvedExpressions reloadData];
+        hasDecimal = NO;
+        hasNegative = NO;
+        hasOperator = NO;
     }    
 }
 
