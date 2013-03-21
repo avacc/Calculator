@@ -12,12 +12,11 @@
 
 
 
-@interface AGVViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@interface AGVViewController : UIViewController <UITableViewDataSource>
 @property (strong, nonatomic) IBOutlet UITableView* solvedExpressions;
 @property (strong, nonatomic) IBOutlet UITextField* expression;
 @property (strong, nonatomic) NSMutableArray* oldExpressions;
 @property (strong, nonatomic) Calculator* calculator;
-@property (strong, nonatomic) UITableViewController* solvedController;
 
 - (IBAction) numberPress: (id) sender;
 - (IBAction) operationPress: (id) sender;

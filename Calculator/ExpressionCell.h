@@ -11,8 +11,7 @@
 
 @interface ExpressionCell : UITableViewCell
 
-@property (strong, nonatomic) IBOutlet UITextField* oldExpression;
+@property (strong, nonatomic) IBOutlet UITextView* oldExpression;
 
-- (id) initWithStyle: (UITableViewCellStyle) style reuseIdentifier: (NSString*) reuseIdentifier withExpression: (NSString*) expression;
 
 @end

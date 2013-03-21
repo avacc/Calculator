@@ -12,7 +12,7 @@
 
 NSString* add = @"+";
 NSString* sub = @"-";
-NSString* mul = @"x";
+NSString* mul = @"*";
 NSString* d = @"/";
 NSString* ex = @"^";
 NSString* mod = @"%";
@@ -44,11 +44,12 @@ NSArray* operators;
                 [self.operatorStack push: token];
                 NSLog(@"Operator Stack Size: %d", self.operatorStack.stac.count);
             }else{
+                NSLog(@"isHigherPriority: %@", ([self isHigherPriority: token]) ? @"YES" : @"NO");
                 NSString* operator = (NSString*) [self.operatorStack pop];
                 second = [NSDecimalNumber decimalNumberWithString: (NSString*)[self.numberStack pop]];
                 first = [NSDecimalNumber decimalNumberWithString: (NSString*)[self.numberStack pop]];
                 if([operator isEqualToString: ex]){
-                    result = [first decimalNumberByRaisingToPower: second];
+                    result = [first decimalNumberByRaisingToPower: [second integerValue]];
                 }else if([operator isEqualToString: mul]){
                     result = [first decimalNumberByMultiplyingBy: second];
                 }else if([operator isEqualToString: d]){
@@ -71,19 +72,28 @@ NSArray* operators;
         }
     }
     NSString* op;
-    NSDecimalNumber* x = [[NSDecimalNumber alloc] init];
-    NSDecimalNumber* y = [[NSDecimalNumber alloc] init];
+    NSDecimalNumber* x;
+    NSDecimalNumber* y;
     NSDecimalNumber* solved;
     while(![self.operatorStack isEmpty]){
-        NSLog(@"In loop");
+        NSLog(@"2nd Loop - numberStack size: %d", self.numberStack.stac.count);
+        NSLog(@"2nd Loop - operatorStack size: %d", self.operatorStack.stac.count);
         op = (NSString*)[self.operatorStack pop];
         NSLog(@"%@", op);
-        y = [NSDecimalNumber decimalNumberWithString: (NSString*) [self.numberStack pop]];
-        x = [NSDecimalNumber decimalNumberWithString: (NSString*) [self.numberStack pop]];
+        if([[self.numberStack peek] isKindOfClass: [NSString class]]){
+            y = [NSDecimalNumber decimalNumberWithString: (NSString*) [self.numberStack pop]];
+        }else{
+            y = [self.numberStack pop];
+        }
+        if([[self.numberStack peek] isKindOfClass: [NSString class]]){
+            x = [NSDecimalNumber decimalNumberWithString: (NSString*) [self.numberStack pop]];
+        }else{
+            x = [self.numberStack pop];
+        }
         NSLog(@"x: %@", x);
         NSLog(@"y: %@", y);
         if([op isEqualToString: ex]){
-            solved = [x decimalNumberByRaisingToPower: [y integerValue]];
+        solved = [x decimalNumberByRaisingToPower: [y integerValue]];
         }else if([op isEqualToString: mul]){
             solved = [x decimalNumberByMultiplyingBy: y];
         }else if([op isEqualToString: d]){
@@ -91,7 +101,7 @@ NSArray* operators;
         }else if([op isEqualToString: mod]){
             int xx = [x intValue];
             int yy = [y intValue];
-            int* ans = xx%yy;
+            int ans = xx%yy;
             solved = (NSDecimalNumber*)[NSDecimalNumber numberWithInt: ans];
         }else if([op isEqualToString: add]){
             solved = [x decimalNumberByAdding: y];
