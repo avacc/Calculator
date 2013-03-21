@@ -13,6 +13,6 @@
 
 @property (strong, nonatomic) IBOutlet UITextField* oldExpression;
 
-- (void) setUpCellWithExpression: (NSString*) expression;
+- (id) initWithStyle: (UITableViewCellStyle) style reuseIdentifier: (NSString*) reuseIdentifier withExpression: (NSString*) expression;
 
 @end

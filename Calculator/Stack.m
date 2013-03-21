@@ -11,7 +11,7 @@
 @implementation Stack
 
 - (Stack*) initStack {
-    self = [super init];
+    self = (Stack*)[super init];
     if (self){
         self.stac = [[NSMutableArray alloc] init];
     }
@@ -20,13 +20,18 @@
 
 - (BOOL) isEmpty {
     if(self.stac.count == 0){
-        return true;
+        return YES;
     }
-    return false;
+    return NO;
 }
 
-- (void) push: (id)item {
+- (void) push: (id) item {
     [self.stac addObject: item];
+    if([self isEmpty]){
+        NSLog(@"Push failed");
+    }else{
+        NSLog(@"Stack size: %d", self.stac.count);
+    }
 }
 
 - (id) pop {
@@ -45,8 +50,5 @@
     return [self.stac lastObject];
 }
 
-- (NSUInteger) size {
-    return [self.stac count];
-}
 
 @end

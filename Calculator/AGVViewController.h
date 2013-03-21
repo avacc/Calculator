@@ -7,20 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ExpressionCell.h"
 #import "Calculator.h"
-#import "Stack.h"
+#import "ExpressionCell.h"
 
-@interface AGVViewController : UIViewController
+
+
+@interface AGVViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 @property (strong, nonatomic) IBOutlet UITableView* solvedExpressions;
 @property (strong, nonatomic) IBOutlet UITextField* expression;
-@property (strong, nonatomic) Calculator* calculator;
 @property (strong, nonatomic) NSMutableArray* oldExpressions;
-
+@property (strong, nonatomic) Calculator* calculator;
+@property (strong, nonatomic) UITableViewController* solvedController;
 
 - (IBAction) numberPress: (id) sender;
 - (IBAction) operationPress: (id) sender;
 - (IBAction) solvePress: (id) sender;
 - (IBAction) backSpacePress: (id) sender;
-
 @end

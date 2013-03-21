@@ -15,14 +15,30 @@
 
 @implementation AGVViewController
 
-
+- (id) init {
+    self = [super init];
+    if(self){
+    }
+    self.calculator = [[Calculator alloc] initCalculator];
+    self.solvedController = [[UITableViewController alloc] init];
+    self.solvedExpressions = [[UITableView alloc] init];
+    [self.solvedController setTableView: self.solvedExpressions];
+    [self.view addSubview: self.solvedExpressions];
+    
+    
+    self.oldExpressions = [[NSMutableArray alloc] init];
+    self.solvedExpressions.delegate = self;
+    self.solvedExpressions.dataSource = self;
+    NSLog(@"View controller initialized");
+    return self;
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    self.oldExpressions = [[NSMutableArray alloc] init];
-    self.calculator = [[Calculator alloc] initCalculator];
+    [self init];
+    NSLog(@"View loaded");
 }
 
 - (IBAction) numberPress: (id) sender {
@@ -46,14 +62,19 @@
     }else{
         NSString* answer = [self.calculator calculate: self.expression.text];
         
-        NSIndexPath* indexPath = [NSIndexPath indexPathForRow: [self.solvedExpressions numberOfRowsInSection: 0] inSection: 0];
+        NSIndexPath* indexPath = [NSIndexPath indexPathForRow: [self.oldExpressions count] inSection: 0];
         [self.oldExpressions addObject: answer];
+        NSLog(@"%d", self.oldExpressions.count);
         NSArray* array = [[NSArray alloc] initWithObjects: indexPath, nil];
         [self.solvedExpressions insertRowsAtIndexPaths: array withRowAnimation: UITableViewRowAnimationAutomatic];
-        ExpressionCell* cell = (ExpressionCell*) [self.solvedExpressions cellForRowAtIndexPath: indexPath];
-        cell.oldExpression.text = answer;
-        [self.solvedExpressions reloadData];
+        NSString* completeExpression = [self.expression.text stringByAppendingFormat: @" = %@", answer];
+        ExpressionCell* cell = (ExpressionCell*)[self.solvedExpressions.dataSource tableView: self.solvedExpressions cellForRowAtIndexPath:indexPath];
+        NSLog(@"%@", cell);
+        
+        //cell.oldExpression.text = completeExpression;
+        NSLog(@"completeExpression: %@ cell.oldExpression.text: %@", completeExpression, cell.oldExpression.text);
         self.expression.text = @"";
+        [self.solvedExpressions reloadData];
     }    
 }
 
@@ -67,18 +88,22 @@
     }
 }
 
-#pragma mark - TableView methods
+#pragma mark - UITableViewDataSource methods
 - (UITableViewCell*) tableView: (UITableView*) tableView cellForRowAtIndexPath: (NSIndexPath*) indexPath {
     ExpressionCell* cell = (ExpressionCell*)[self.solvedExpressions dequeueReusableCellWithIdentifier: @"ExpressionCell"];
-    
+    NSLog(@"%@", cell);
     if(!cell){
-        cell = [[ExpressionCell alloc] initWithStyle: UITableViewCellStyleDefault reuseIdentifier: @"ExpressionCell"];
+        cell = (ExpressionCell*)[[ExpressionCell alloc] initWithStyle: UITableViewCellStyleDefault reuseIdentifier: @"ExpressionCell" withExpression: @"text"];
     }
     
     return cell;
 }
 
-- (NSInteger) tableView: (UITableView*) tableView numberOfRowsInSection: (NSInteger) section {
+- (NSInteger) tableView: (UIView*) tableView numberOfRowsInSection: (NSInteger) section {
     return [self.oldExpressions count];
+}
+
+- (NSInteger) numberOfSectionsInTableView: (UITableView*) tableView{
+    return 1;
 }
 @end

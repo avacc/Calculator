@@ -16,8 +16,7 @@
 
 - (Calculator*) initCalculator;
 - (NSString*) calculate: (NSString*) expression;
-- (void) pushNumber: (id) num;
-- (void) pushOperator: (id) oper;
-- (BOOL) ableToCalculate;
+- (BOOL) isHigherPriority: (NSString*) newOperator;
+
 
 @end
