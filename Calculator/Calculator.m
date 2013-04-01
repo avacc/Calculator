@@ -37,15 +37,16 @@ NSArray* operators;
     NSDecimalNumber* first = [[NSDecimalNumber alloc] init];
     NSDecimalNumber* result = [[NSDecimalNumber alloc] init];
     @try {
-        for(NSString* token in tokens){
+        //for(NSString* token in tokens){
+        for(int i = [tokens count]-1; i >= 0; i--){
             NSLog(@"Number Stack size: %d", self.numberStack.stac.count);
-            if([operators containsObject: token]){
+            if([operators containsObject: [tokens objectAtIndex: i]]){
                 NSLog(@"Contains object");
-                if([self isHigherPriority: token]) {
-                    [self.operatorStack push: token];
+                if([self isHigherPriority: [tokens objectAtIndex: i]]) {
+                    [self.operatorStack push: [tokens objectAtIndex: i]];
                     NSLog(@"Operator Stack Size: %d", self.operatorStack.stac.count);
                 }else{
-                    NSLog(@"isHigherPriority: %@", ([self isHigherPriority: token]) ? @"YES" : @"NO");
+                    NSLog(@"isHigherPriority: %@", ([self isHigherPriority: [tokens objectAtIndex: i]]) ? @"YES" : @"NO");
                     NSString* operator = (NSString*) [self.operatorStack pop];
                     second = [NSDecimalNumber decimalNumberWithString: (NSString*)[self.numberStack pop]];
                     first = [NSDecimalNumber decimalNumberWithString: (NSString*)[self.numberStack pop]];
@@ -66,10 +67,10 @@ NSArray* operators;
                         result = [first decimalNumberBySubtracting: second];
                     }
                     [self.numberStack push: result];
-                    [self.operatorStack push: token];
+                    [self.operatorStack push: [tokens objectAtIndex: i]];
                 }
             }else{
-                [self.numberStack push: token];
+                [self.numberStack push: [tokens objectAtIndex: i]];
             }
         }
         NSString* op;
@@ -82,14 +83,14 @@ NSArray* operators;
             op = (NSString*)[self.operatorStack pop];
             NSLog(@"%@", op);
             if([[self.numberStack peek] isKindOfClass: [NSString class]]){
-                y = [NSDecimalNumber decimalNumberWithString: (NSString*) [self.numberStack pop]];
-            }else{
-                y = [self.numberStack pop];
-            }
-            if([[self.numberStack peek] isKindOfClass: [NSString class]]){
                 x = [NSDecimalNumber decimalNumberWithString: (NSString*) [self.numberStack pop]];
             }else{
                 x = [self.numberStack pop];
+            }
+            if([[self.numberStack peek] isKindOfClass: [NSString class]]){
+                y = [NSDecimalNumber decimalNumberWithString: (NSString*) [self.numberStack pop]];
+            }else{
+                y = [self.numberStack pop];
             }
             NSLog(@"x: %@", x);
             NSLog(@"y: %@", y);
@@ -109,6 +110,7 @@ NSArray* operators;
             }else{
                 solved = [x decimalNumberBySubtracting: y];
             }
+            NSLog(@"solved: %@", solved);
             [self.numberStack push: solved];
         }
         NSDecimalNumber* z = (NSDecimalNumber*)[self.numberStack pop];
