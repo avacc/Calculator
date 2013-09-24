@@ -10,6 +10,7 @@
 		FA1053F216CC30FE0059262D /* Stack.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1053F116CC30FE0059262D /* Stack.m */; };
 		FA1053F516CC3E340059262D /* Calculator.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1053F416CC3E340059262D /* Calculator.m */; };
 		FA33C8A316CB1639000FAEFA /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA33C89916CB1639000FAEFA /* MainStoryboard.storyboard */; };
+		FA381E31175BF96E008B5731 /* 602905863.png in Resources */ = {isa = PBXBuildFile; fileRef = FA381E30175BF96E008B5731 /* 602905863.png */; };
 		FA9DAE3B16CB262F007415F3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA9DAE3A16CB262F007415F3 /* InfoPlist.strings */; };
 		FABEA7DC16CB18F3001938BA /* AGVAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FABEA7D916CB18F3001938BA /* AGVAppDelegate.m */; };
 		FABEA7E316CB1930001938BA /* AGVViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FABEA7E116CB1930001938BA /* AGVViewController.m */; };
@@ -47,6 +48,7 @@
 		FA1053F416CC3E340059262D /* Calculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Calculator.m; sourceTree = "<group>"; };
 		FA33C88E16CB1639000FAEFA /* AGVAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGVAppDelegate.h; sourceTree = "<group>"; };
 		FA33C89A16CB1639000FAEFA /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		FA381E30175BF96E008B5731 /* 602905863.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 602905863.png; path = ../602905863.png; sourceTree = "<group>"; };
 		FA9DAE3A16CB262F007415F3 /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
 		FABEA7D916CB18F3001938BA /* AGVAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGVAppDelegate.m; sourceTree = "<group>"; };
 		FABEA7E016CB1930001938BA /* AGVViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGVViewController.h; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 		FADDEED316AF53DA0036357D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FA381E30175BF96E008B5731 /* 602905863.png */,
 				FA9DAE3A16CB262F007415F3 /* InfoPlist.strings */,
 				FADDEED816AF53DA0036357D /* main.m */,
 				FADDEED416AF53DA0036357D /* Calculator-Info.plist */,
@@ -254,6 +257,7 @@
 				FADDEEE316AF53DA0036357D /* Default-568h@2x.png in Resources */,
 				FA33C8A316CB1639000FAEFA /* MainStoryboard.storyboard in Resources */,
 				FA9DAE3B16CB262F007415F3 /* InfoPlist.strings in Resources */,
+				FA381E31175BF96E008B5731 /* 602905863.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -18,6 +18,7 @@
 BOOL hasDecimal = NO;
 BOOL hasNegative = NO;
 BOOL hasOperator = NO;
+BOOL lastWasOperator = NO;
 
 - (id) init {
     self = [super init];
@@ -70,6 +71,7 @@ BOOL hasOperator = NO;
         hasOperator = YES;
         hasDecimal = NO;
         hasNegative = NO;
+        lastWasOperator = YES;
     }
 }
 
